@@ -1,0 +1,16 @@
+<% include('../layouts/header') %>
+
+<form action="" method="post">
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="number" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="submit" value="Update Profile">
+
+</form>
+
+
+<% include('../layouts/footer') %>

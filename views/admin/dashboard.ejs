@@ -1,0 +1,42 @@
+<% include('../layouts/header') %>
+
+<h1>Welcome to dashboard</h1>
+<br><br>
+<a href="/admin/new-user">Add new user</a>
+
+<table width="50%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Actions</th>
+    </tr>
+
+    <% 
+        if(users.length > 0){
+            for(let i=0;i<users.length;i++){
+            %>
+            <tr>
+                <td><%= users[i].name%></td>
+                <td><%= users[i].email%></td>
+                <td><%= users[i].mobile%></td>
+                <td><a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a></td>
+                <td><a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a></td>
+            </tr>
+            <%
+            }
+
+        }
+        else{
+            %>
+            <tr>
+                <td colspan="5">Users not found</td>
+            </tr>
+            <%
+        }
+    %>
+</table>
+
+<a href="/admin/home">Home</a>
+
+<% include('../layouts/footer') %>

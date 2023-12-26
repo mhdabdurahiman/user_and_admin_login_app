@@ -1,0 +1,29 @@
+<% include('../layouts/header.ejs') %>
+
+<h1>Add New User</h1>
+
+<form action="/admin/new-user" method="post">
+    <input type="text" name="name" placeholder="Enter Name" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="text" name="email" placeholder="Enter Email" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="text" name="mobile" placeholder="Enter Mobile Number" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="password" name="password" placeholder="Enter Password" required pattern="^[^\s]*$">
+    <br></br>
+    <input type="submit" value="Register">
+</form>
+
+
+
+<% if(typeof message !== 'undefined'){
+    %>
+    <p style="color: green;"><%= message %></p>
+    <%
+} %>
+
+<br>
+<a href="/admin/dashboard">go back</a>
+
+
+<% include('../layouts/footer.ejs') %>

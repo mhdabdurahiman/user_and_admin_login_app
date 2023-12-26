@@ -1,0 +1,24 @@
+<% include('../layouts/header') %>
+
+<h1>Welcome <%= admin.name %></h1>
+
+<br>
+
+<a href="/admin/dashboard">Dashboard</a>
+
+<br><br>
+
+<table style="width:50%">
+    <tr>
+        <td>Email</td>
+        <td><%= admin.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= admin.mobile %></td>
+    </tr>
+</table>
+<br><br>
+<a href="/admin/logout">Logout</a>
+
+<% include('../layouts/footer') %>

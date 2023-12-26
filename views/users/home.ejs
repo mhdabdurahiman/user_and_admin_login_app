@@ -1,0 +1,22 @@
+<% include('../layouts/header') %>
+
+<h2>Welcome <i><%= user.name %></i></h2>
+
+<table width="50%" border="1px">
+    <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= user.mobile %></td>
+    </tr>
+</table>
+
+<br><br>
+
+<a href="/edit?id=<%= user._id %>">Edit</a>&nbsp;&nbsp;&nbsp;
+<a href="/logout">Logout</a>
+
+
+<% include('../layouts/footer') %>

@@ -1,0 +1,23 @@
+<% include('../layouts/header') %>
+
+<h1>Admin Login</h1>
+
+<% if(typeof message !== 'undefined'){
+ %>
+ <h4><%= message %></h4>
+ <%
+}
+%>
+<form action="" method="post">
+
+    <input type="email" name="email" placeholder="Enter email" pattern="^[^\s]*$">
+    <br><br>
+    <input type="password" name="password" placeholder="Enter password" pattern="^[^\s]*$">
+    <br><br>
+    <input type="submit" value="Login">
+
+</form>
+
+<a href="/login">User login</a>
+
+<% include('../layouts/footer') %>
