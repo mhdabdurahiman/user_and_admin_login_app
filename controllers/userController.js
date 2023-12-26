@@ -83,12 +83,7 @@ const verifyLogin = async(req,res)=>{
 const loadHome = async(req,res)=>{
     try {
         const userData = await User.findById({ _id:req.session.user_id })
-        if (userData.is_admin === 1) {
-            res.redirect('login')
-        } else {
-            res.render('home',{user:userData});
-        }
-        
+        res.render('home',{user:userData});
     } catch (error) {
         console.log(error.message)
     }

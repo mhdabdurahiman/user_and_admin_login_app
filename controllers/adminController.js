@@ -35,7 +35,7 @@ const verifyLogin = async(req,res)=>{
                     res.render('login',{message:"Email or password is incorrect"});
                 }
                 else{
-                    req.session.user_id = userData._id;
+                    req.session.admin_id = userData._id;
                     res.redirect("/admin/home");
                 }
             }
@@ -50,7 +50,7 @@ const verifyLogin = async(req,res)=>{
 
 const loadDashboard = async(req,res)=>{
     try {
-        const userData = await User.findById({_id:req.session.user_id});
+        const userData = await User.findById({_id:req.session.admin_id});
         res.render('home',{admin:userData});
     } catch (error) {
         console.log(error.message)
