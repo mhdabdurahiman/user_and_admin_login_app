@@ -10,17 +10,18 @@ admin_route.use(bodyParser.json());
 admin_route.use(bodyParser.urlencoded({extended:true}));
 
 const auth = require('../middleware/adminAuth')
+const nocache = require('../middleware/nocache')
 
 admin_route.set('view engine', 'ejs');
 admin_route.set('views','./views/admin');
 
 const adminController = require('../controllers/adminController')
 
-admin_route.get('/',auth.isLogout,adminController.loadLogin);
+admin_route.get('/',nocache.nocache,auth.isLogout,adminController.loadLogin);
 
 admin_route.post('/',adminController.verifyLogin);
 
-admin_route.get('/home',auth.isLogin,adminController.loadDashboard);
+admin_route.get('/home',nocache.nocache,auth.isLogin,adminController.loadDashboard);
 
 admin_route.get('/logout',auth.isLogin,adminController.logout);
 

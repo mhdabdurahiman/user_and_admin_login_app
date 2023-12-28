@@ -49,7 +49,11 @@ const insertUser = async(req,res)=>{
 
 const loginLoad = async(req,res)=>{
     try {
-        res.render('login');
+        if (req.session.user_id) {
+            res.redirect('home')
+        } else {
+            res.render('login');
+        }
     } catch (error) {
         console.log(error.message);
     }

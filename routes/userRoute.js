@@ -7,6 +7,7 @@ const config = require('../config/config');
 user_route.use(session({secret:config.sessionSecret}));
 
 const auth = require('../middleware/auth')
+const nocache = require('../middleware/nocache')
 
 user_route.set('view engine','ejs');
 user_route.set('views','./views/users')
@@ -23,9 +24,9 @@ user_route.get('/register',auth.isLogout,userController.loadRegister);
 
 user_route.post('/register',userController.insertUser);
 
-user_route.get('/',auth.isLogout,userController.loginLoad);
+user_route.get('/',nocache.nocache,auth.isLogout,userController.loginLoad);
 
-user_route.get('/login',auth.isLogout,userController.loginLoad);
+user_route.get('/login',nocache.nocache,auth.isLogout,userController.loginLoad);
 
 user_route.post('/login',userController.verifyLogin);
 

@@ -2,11 +2,11 @@
 
 <form action="" method="post">
     <input type="hidden" name="user_id" value="<%= user._id %>">
-    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required pattern="^[^\s]*$">
+    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required pattern="^(\w\w+)\s(\w+)$">
     <br></br>
-    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required pattern="^[^\s]*$">
+    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
     <br></br>
-    <input type="number" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile" required pattern="^[^\s]*$">
+    <input type="number" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile" required pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$">
     <br></br>
     <input type="submit" value="Update Profile">
 

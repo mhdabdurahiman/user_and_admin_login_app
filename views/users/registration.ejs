@@ -3,11 +3,11 @@
 <h1>User Registration Form</h1>
 
 <form action="/register" method="post">
-    <input type="text" name="name" placeholder="Enter Name" required pattern="^[^\s]*$">
+    <input type="text" name="name" placeholder="Enter Name" required pattern="^(\w\w+)\s(\w+)$">
     <br></br>
-    <input type="text" name="email" placeholder="Enter Email" required pattern="^[^\s]*$">
+    <input type="text" name="email" placeholder="Enter Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
     <br></br>
-    <input type="text" name="mobile" placeholder="Enter Mobile Number" required pattern="^[^\s]*$">
+    <input type="text" name="mobile" placeholder="Enter Mobile Number" required pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$">
     <br></br>
     <input type="password" name="password" placeholder="Enter Password" required pattern="^[^\s]*$">
     <br></br>
